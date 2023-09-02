@@ -120,6 +120,10 @@ export default function Editor({
     autofocus: "end",
   });
 
+  const html = editor?.getHTML();
+
+  console.log("html", html);
+
   const { complete, completion, isLoading, stop } = useCompletion({
     id: "novel",
     api: completionApi,

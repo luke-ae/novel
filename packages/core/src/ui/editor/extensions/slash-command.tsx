@@ -17,17 +17,12 @@ import {
   Heading3,
   List,
   ListOrdered,
-  MessageSquarePlus,
   Text,
-  TextQuote,
   Image as ImageIcon,
-  Code,
-  CheckSquare,
 } from "lucide-react";
 import { LoadingCircle } from "@/ui/icons";
 import { toast } from "sonner";
 import va from "@vercel/analytics";
-import { Magic } from "@/ui/icons";
 import { getPrevText } from "@/lib/editor";
 import { startImageUpload } from "@/ui/editor/plugins/upload-images";
 
@@ -75,21 +70,6 @@ const Command = Extension.create({
 const getSuggestionItems = ({ query }: { query: string }) => {
   return [
     {
-      title: "Continue writing",
-      description: "Use AI to expand your thoughts.",
-      searchTerms: ["gpt"],
-      icon: <Magic className="w-7" />,
-    },
-    {
-      title: "Send Feedback",
-      description: "Let us know how we can improve.",
-      icon: <MessageSquarePlus size={18} />,
-      command: ({ editor, range }: CommandProps) => {
-        editor.chain().focus().deleteRange(range).run();
-        window.open("/feedback", "_blank");
-      },
-    },
-    {
       title: "Text",
       description: "Just start typing with plain text.",
       searchTerms: ["p", "paragraph"],
@@ -101,15 +81,6 @@ const getSuggestionItems = ({ query }: { query: string }) => {
           .deleteRange(range)
           .toggleNode("paragraph", "paragraph")
           .run();
-      },
-    },
-    {
-      title: "To-do List",
-      description: "Track tasks with a to-do list.",
-      searchTerms: ["todo", "task", "list", "check", "checkbox"],
-      icon: <CheckSquare size={18} />,
-      command: ({ editor, range }: CommandProps) => {
-        editor.chain().focus().deleteRange(range).toggleTaskList().run();
       },
     },
     {
@@ -171,28 +142,6 @@ const getSuggestionItems = ({ query }: { query: string }) => {
       command: ({ editor, range }: CommandProps) => {
         editor.chain().focus().deleteRange(range).toggleOrderedList().run();
       },
-    },
-    {
-      title: "Quote",
-      description: "Capture a quote.",
-      searchTerms: ["blockquote"],
-      icon: <TextQuote size={18} />,
-      command: ({ editor, range }: CommandProps) =>
-        editor
-          .chain()
-          .focus()
-          .deleteRange(range)
-          .toggleNode("paragraph", "paragraph")
-          .toggleBlockquote()
-          .run(),
-    },
-    {
-      title: "Code",
-      description: "Capture a code snippet.",
-      searchTerms: ["codeblock"],
-      icon: <Code size={18} />,
-      command: ({ editor, range }: CommandProps) =>
-        editor.chain().focus().deleteRange(range).toggleCodeBlock().run(),
     },
     {
       title: "Image",

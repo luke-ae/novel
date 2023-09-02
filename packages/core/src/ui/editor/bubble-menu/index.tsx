@@ -1,14 +1,7 @@
 import { BubbleMenu, BubbleMenuProps } from "@tiptap/react";
 import { FC, useState } from "react";
-import {
-  BoldIcon,
-  ItalicIcon,
-  UnderlineIcon,
-  StrikethroughIcon,
-  CodeIcon,
-} from "lucide-react";
+import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
 import { NodeSelector } from "./node-selector";
-import { ColorSelector } from "./color-selector";
 import { LinkSelector } from "./link-selector";
 import { cn } from "@/lib/utils";
 
@@ -41,18 +34,6 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
       command: () => props.editor.chain().focus().toggleUnderline().run(),
       icon: UnderlineIcon,
     },
-    {
-      name: "strike",
-      isActive: () => props.editor.isActive("strike"),
-      command: () => props.editor.chain().focus().toggleStrike().run(),
-      icon: StrikethroughIcon,
-    },
-    {
-      name: "code",
-      isActive: () => props.editor.isActive("code"),
-      command: () => props.editor.chain().focus().toggleCode().run(),
-      icon: CodeIcon,
-    },
   ];
 
   const bubbleMenuProps: EditorBubbleMenuProps = {
@@ -68,14 +49,12 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
       moveTransition: "transform 0.15s ease-out",
       onHidden: () => {
         setIsNodeSelectorOpen(false);
-        setIsColorSelectorOpen(false);
         setIsLinkSelectorOpen(false);
       },
     },
   };
 
   const [isNodeSelectorOpen, setIsNodeSelectorOpen] = useState(false);
-  const [isColorSelectorOpen, setIsColorSelectorOpen] = useState(false);
   const [isLinkSelectorOpen, setIsLinkSelectorOpen] = useState(false);
 
   return (
@@ -88,7 +67,6 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
         isOpen={isNodeSelectorOpen}
         setIsOpen={() => {
           setIsNodeSelectorOpen(!isNodeSelectorOpen);
-          setIsColorSelectorOpen(false);
           setIsLinkSelectorOpen(false);
         }}
       />
@@ -97,7 +75,6 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
         isOpen={isLinkSelectorOpen}
         setIsOpen={() => {
           setIsLinkSelectorOpen(!isLinkSelectorOpen);
-          setIsColorSelectorOpen(false);
           setIsNodeSelectorOpen(false);
         }}
       />
@@ -117,15 +94,6 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           </button>
         ))}
       </div>
-      <ColorSelector
-        editor={props.editor}
-        isOpen={isColorSelectorOpen}
-        setIsOpen={() => {
-          setIsColorSelectorOpen(!isColorSelectorOpen);
-          setIsNodeSelectorOpen(false);
-          setIsLinkSelectorOpen(false);
-        }}
-      />
     </BubbleMenu>
   );
 };
