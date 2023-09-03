@@ -3,7 +3,8 @@ import { startImageUpload } from "@/ui/editor/plugins/upload-images";
 
 export const defaultEditorProps: EditorProps = {
   attributes: {
-    class: `prose-lg prose-stone dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full`,
+    class:
+      "prose prose-zinc dark:prose-invert font-default focus:outline-none max-w-full",
   },
   handleDOMEvents: {
     keydown: (_view, event) => {
