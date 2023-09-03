@@ -187,8 +187,10 @@ export default function Editor({
     if (editor && content && !hydrated) {
       editor.commands.setContent(content);
       setHydrated(true);
+      onUpdate(editor); // call the onUpdate function
+      onDebouncedUpdate(editor); // call the onDebouncedUpdate function
     }
-  }, [editor, content, hydrated]);
+  }, [editor, content, hydrated, onUpdate, onDebouncedUpdate]);
 
   return (
     <div
