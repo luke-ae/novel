@@ -1,13 +1,14 @@
 {
   "name": "@luke-ae/novel",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Notion-style WYSIWYG editor with AI-powered autocompletions",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "styles/**/*"
   ],
   "exports": {
     ".": {
