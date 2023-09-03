@@ -16,7 +16,7 @@ export const AppContext = createContext<{
 
 const ToasterProvider = () => {
   const { theme } = useTheme() as {
-    theme: "light" | "dark" | "system";
+    theme: "light";
   };
   return <Toaster theme={theme} />;
 };
@@ -29,7 +29,6 @@ export default function Providers({ children }: { children: ReactNode }) {
       attribute="class"
       value={{
         light: "light-theme",
-        dark: "dark-theme",
       }}
     >
       <AppContext.Provider

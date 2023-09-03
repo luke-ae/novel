@@ -1,14 +1,13 @@
 {
   "name": "@luke-ae/novel",
-  "version": "0.1.31",
+  "version": "0.1.33",
   "description": "Notion-style WYSIWYG editor with AI-powered autocompletions",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/**/*",
-    "styles/**/*"
+    "dist/**/*"
   ],
   "exports": {
     ".": {
@@ -19,7 +18,7 @@
     }
   },
   "scripts": {
-    "build": "tsup && cp -r styles dist/styles",
+    "build": "tsup",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit"
   },
