@@ -46,11 +46,11 @@ export default function Menu() {
 
   return (
     <Popover>
-      <PopoverTrigger className="hover:bg-stone-100 active:bg-stone-200 tw-absolute tw-bottom-5 tw-right-5 tw-z-10 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded-lg tw-transition-colors tw-duration-200 sm:tw-bottom-auto sm:tw-top-5">
-        <MenuIcon className="text-stone-600" width={16} />
+      <PopoverTrigger className="hover:tw-bg-stone-100 active:tw-bg-stone-200 tw-absolute tw-bottom-5 tw-right-5 tw-z-10 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded-lg tw-transition-colors tw-duration-200 sm:tw-bottom-auto sm:tw-top-5">
+        <MenuIcon className="tw-text-stone-600" width={16} />
       </PopoverTrigger>
       <PopoverContent
-        className="divide-stone-200 tw-w-52 tw-divide-y"
+        className="tw-divide-stone-200 tw-w-52 tw-divide-y"
         align="end"
       >
         {/* <div className="tw-p-2">
