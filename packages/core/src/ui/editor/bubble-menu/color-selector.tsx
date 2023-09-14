@@ -109,11 +109,11 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
     <Popover.Root open={isOpen}>
       <div className="relative h-full">
         <Popover.Trigger
-          className="flex h-full items-center gap-1 p-2 text-sm font-medium text-stone-600 hover:bg-stone-100 active:bg-stone-200"
+          className="tw-flex tw-h-full tw-items-center tw-gap-1 tw-p-2 tw-text-sm tw-font-medium tw-text-stone-600 hover:tw-bg-stone-100 active:tw-bg-stone-200"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span
-            className="rounded-sm px-1"
+            className="tw-rounded-sm tw-px-1"
             style={{
               color: activeColorItem?.color,
               backgroundColor: activeHighlightItem?.color,
@@ -122,14 +122,16 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
             A
           </span>
 
-          <ChevronDown className="h-4 w-4" />
+          <ChevronDown className="tw-h-4 tw-w-4" />
         </Popover.Trigger>
 
         <Popover.Content
           align="start"
-          className="z-[99999] my-1 flex max-h-80 w-48 flex-col overflow-hidden overflow-y-auto rounded border border-stone-200 bg-white p-1 shadow-xl animate-in fade-in slide-in-from-top-1"
+          className="tw-z-[99999] tw-my-1 tw-flex tw-max-h-80 tw-w-48 tw-flex-col tw-overflow-hidden tw-overflow-y-auto tw-rounded tw-border tw-border-stone-200 tw-bg-white tw-p-1 tw-shadow-xl tw-animate-in tw-fade-in tw-slide-in-from-top-1"
         >
-          <div className="my-1 px-2 text-sm text-stone-500">Color</div>
+          <div className="tw-my-1 tw-px-2 tw-text-sm tw-text-stone-500">
+            Color
+          </div>
           {TEXT_COLORS.map(({ name, color }, index) => (
             <button
               key={index}
@@ -143,12 +145,12 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
                     .run();
                 setIsOpen(false);
               }}
-              className="flex items-center justify-between rounded-sm px-2 py-1 text-sm text-stone-600 hover:bg-stone-100"
+              className="tw-flex tw-items-center tw-justify-between tw-rounded-sm tw-px-2 tw-py-1 tw-text-sm tw-text-stone-600 hover:tw-bg-stone-100"
               type="button"
             >
-              <div className="flex items-center space-x-2">
+              <div className="tw-flex tw-items-center tw-space-x-2">
                 <div
-                  className="rounded-sm border border-stone-200 px-1 py-px font-medium"
+                  className="tw-rounded-sm tw-border tw-border-stone-200 tw-px-1 tw-py-px tw-font-medium"
                   style={{ color }}
                 >
                   A
@@ -156,12 +158,12 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
                 <span>{name}</span>
               </div>
               {editor.isActive("textStyle", { color }) && (
-                <Check className="h-4 w-4" />
+                <Check className="tw-h-4 tw-w-4" />
               )}
             </button>
           ))}
 
-          <div className="mb-1 mt-2 px-2 text-sm text-stone-500">
+          <div className="tw-mb-1 tw-mt-2 tw-px-2 tw-text-sm tw-text-stone-500">
             Background
           </div>
 
@@ -173,12 +175,12 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
                 name !== "Default" && editor.commands.setHighlight({ color });
                 setIsOpen(false);
               }}
-              className="flex items-center justify-between rounded-sm px-2 py-1 text-sm text-stone-600 hover:bg-stone-100"
+              className="tw-flex tw-items-center tw-justify-between tw-rounded-sm tw-px-2 tw-py-1 tw-text-sm tw-text-stone-600 hover:tw-bg-stone-100"
               type="button"
             >
-              <div className="flex items-center space-x-2">
+              <div className="tw-flex tw-items-center tw-space-x-2">
                 <div
-                  className="rounded-sm border border-stone-200 px-1 py-px font-medium"
+                  className="tw-rounded-sm tw-border tw-border-stone-200 tw-px-1 tw-py-px tw-font-medium"
                   style={{ backgroundColor: color }}
                 >
                   A
@@ -186,7 +188,7 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
                 <span>{name}</span>
               </div>
               {editor.isActive("highlight", { color }) && (
-                <Check className="h-4 w-4" />
+                <Check className="tw-h-4 tw-w-4" />
               )}
             </button>
           ))}

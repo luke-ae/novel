@@ -3,7 +3,8 @@ import { startImageUpload } from "@/ui/editor/plugins/upload-images";
 
 export const defaultEditorProps: EditorProps = {
   attributes: {
-    class: "prose prose-zinc font-default focus:outline-none max-w-full",
+    class:
+      "tw-prose tw-prose-zinc tw-font-default focus:tw-outline-none tw-max-w-full",
   },
   handleDOMEvents: {
     keydown: (_view, event) => {

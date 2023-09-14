@@ -7,6 +7,7 @@ module.exports = {
     `src/**/*.{js,ts,jsx,tsx}`,
     "../../packages/core/src/*.{js,ts,jsx,tsx}",
   ],
+  prefix: "tw-",
   theme: {},
   plugins: [
     // Tailwind plugins

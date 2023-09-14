@@ -19,34 +19,34 @@ export const defaultExtensions = [
   StarterKit.configure({
     bulletList: {
       HTMLAttributes: {
-        class: "list-disc list-outside leading-3 -mt-2",
+        class: "tw-list-disc tw-list-outside tw-leading-3 -tw-mt-2",
       },
     },
     orderedList: {
       HTMLAttributes: {
-        class: "list-decimal list-outside leading-3 -mt-2",
+        class: "tw-list-decimal tw-list-outside tw-leading-3 -tw-mt-2",
       },
     },
     listItem: {
       HTMLAttributes: {
-        class: "leading-normal -mb-2",
+        class: "tw-leading-normal -tw-mb-2",
       },
     },
     blockquote: {
       HTMLAttributes: {
-        class: "border-l-4 border-stone-700",
+        class: "tw-border-l-4 tw-border-stone-700",
       },
     },
     codeBlock: {
       HTMLAttributes: {
         class:
-          "rounded-sm bg-stone-100 p-5 font-mono font-medium text-stone-800",
+          "tw-rounded-sm tw-bg-stone-100 tw-p-5 tw-font-mono tw-font-medium tw-text-stone-800",
       },
     },
     code: {
       HTMLAttributes: {
         class:
-          "rounded-md bg-stone-200 px-1.5 py-1 font-mono font-medium text-stone-900",
+          "tw-rounded-md tw-bg-stone-200 tw-px-1.5 tw-py-1 tw-font-mono tw-font-medium tw-text-stone-900",
         spellcheck: "false",
       },
     },
@@ -80,13 +80,13 @@ export const defaultExtensions = [
     },
   }).configure({
     HTMLAttributes: {
-      class: "mt-4 mb-6 border-t border-stone-300",
+      class: "tw-mt-4 tw-mb-6 tw-border-t tw-border-stone-300",
     },
   }),
   TiptapLink.configure({
     HTMLAttributes: {
       class:
-        "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+        "tw-text-stone-400 tw-underline tw-underline-offset-[3px] hover:tw-text-stone-600 tw-transition-colors tw-cursor-pointer",
     },
   }),
   TiptapImage.extend({
@@ -96,12 +96,12 @@ export const defaultExtensions = [
   }).configure({
     allowBase64: true,
     HTMLAttributes: {
-      class: "rounded-lg border border-stone-200",
+      class: "tw-rounded-lg tw-border tw-border-stone-200",
     },
   }),
   UpdatedImage.configure({
     HTMLAttributes: {
-      class: "rounded-lg border border-stone-200",
+      class: "tw-rounded-lg tw-border tw-border-stone-200",
     },
   }),
   Placeholder.configure({
@@ -122,12 +122,12 @@ export const defaultExtensions = [
   }),
   TaskList.configure({
     HTMLAttributes: {
-      class: "not-prose pl-2",
+      class: "tw-not-prose tw-pl-2",
     },
   }),
   TaskItem.configure({
     HTMLAttributes: {
-      class: "flex items-start my-4",
+      class: "tw-flex tw-items-start tw-my-4",
     },
     nested: true,
   }),

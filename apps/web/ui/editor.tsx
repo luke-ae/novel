@@ -7,8 +7,8 @@ export default function Editor() {
   const [saveStatus, setSaveStatus] = useState("Saved");
 
   return (
-    <div className="relative w-full max-w-4xl">
-      <div className="absolute right-5 top-5 z-10 mb-5 rounded-lg bg-stone-100 px-2 py-1 text-sm text-stone-400">
+    <div className="tw-relative tw-w-full tw-max-w-4xl">
+      <div className="tw-absolute tw-right-5 tw-top-5 tw-z-10 tw-mb-5 tw-rounded-lg tw-bg-stone-100 tw-px-2 tw-py-1 tw-text-sm tw-text-stone-400">
         {saveStatus}
       </div>
       <NovelEditor

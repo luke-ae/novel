@@ -46,7 +46,7 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
       return editor.view.state.selection.content().size > 0;
     },
     tippyOptions: {
-      moveTransition: "transform 0.15s ease-out",
+      moveTransition: "tw-transform tw-0.15s tw-ease-out",
       onHidden: () => {
         setIsNodeSelectorOpen(false);
         setIsLinkSelectorOpen(false);
@@ -60,7 +60,7 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
   return (
     <BubbleMenu
       {...bubbleMenuProps}
-      className="flex w-fit divide-x divide-stone-200 rounded border border-stone-200 bg-white shadow-xl"
+      className="tw-flex tw-w-fit tw-divide-x tw-divide-stone-200 tw-rounded tw-border tw-border-stone-200 tw-bg-white tw-shadow-xl"
     >
       <NodeSelector
         editor={props.editor}
@@ -78,16 +78,16 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsNodeSelectorOpen(false);
         }}
       />
-      <div className="flex">
+      <div className="tw-flex">
         {items.map((item, index) => (
           <button
             key={index}
             onClick={item.command}
-            className="p-2 text-stone-600 hover:bg-stone-100 active:bg-stone-200"
+            className="tw-p-2 tw-text-stone-600 hover:tw-bg-stone-100 active:tw-bg-stone-200"
             type="button"
           >
             <item.icon
-              className={cn("h-4 w-4", {
+              className={cn("tw-h-4 tw-w-4", {
                 "text-blue-500": item.isActive(),
               })}
             />
