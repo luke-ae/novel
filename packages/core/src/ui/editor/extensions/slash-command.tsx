@@ -295,18 +295,18 @@ const CommandList = ({
     <div
       id="slash-command"
       ref={commandListContainer}
-      className="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-stone-200 bg-white px-1 py-2 shadow-md transition-all"
+      className="tw-z-50 tw-h-auto tw-max-h-[330px] tw-w-72 tw-overflow-y-auto tw-rounded-md tw-border tw-border-stone-200 tw-bg-white tw-px-1 tw-py-2 tw-shadow-md tw-transition-all"
     >
       {items.map((item: CommandItemProps, index: number) => {
         return (
           <button
-            className={`flex w-full items-center space-x-2 rounded-md px-2 py-1 text-left text-sm text-stone-900 hover:bg-stone-100 ${
-              index === selectedIndex ? "bg-stone-100 text-stone-900" : ""
+            className={`tw-flex tw-w-full tw-items-center tw-space-x-2 tw-rounded-md tw-px-2 tw-py-1 tw-text-left tw-text-sm tw-text-stone-900 hover:tw-bg-stone-100 ${
+              index === selectedIndex ? "tw-bg-stone-100 tw-text-stone-900" : ""
             }`}
             key={index}
             onClick={() => selectItem(index)}
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-md border border-stone-200 bg-white">
+            <div className="tw-flex tw-h-10 tw-w-10 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-stone-200 tw-bg-white">
               {item.title === "Continue writing" && isLoading ? (
                 <LoadingCircle />
               ) : (
@@ -314,8 +314,8 @@ const CommandList = ({
               )}
             </div>
             <div>
-              <p className="font-medium">{item.title}</p>
-              <p className="text-xs text-stone-500">{item.description}</p>
+              <p className="tw-font-medium">{item.title}</p>
+              <p className="tw-text-xs tw-text-stone-500">{item.description}</p>
             </div>
           </button>
         );
