@@ -24,7 +24,7 @@ import { Editor as EditorClass } from "@tiptap/core";
 
 export default function Editor({
   completionApi = "/api/generate",
-  className = "relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-white p-12 px-8 sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:px-12 sm:shadow-lg",
+  className = "tw-relative tw-min-h-[500px] tw-w-full tw-max-w-screen-lg tw-border-stone-200 tw-bg-white tw-p-12 tw-px-8 sm:tw-mb-[calc(20vh)] sm:tw-rounded-lg sm:tw-border sm:px-12 sm:shadow-lg",
   defaultValue = defaultEditorContent,
   extensions = [],
   editorProps = {},
